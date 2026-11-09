@@ -1,0 +1,112 @@
+/* Piste B - Terre du Languedoc (base DA 1 : papier, Newsreader, IBM Plex) */
+:root{--papier:#faf4ec;--feuille:#fffaf4;--encre:#1b1b19;--gris:#67655e;--trait:#e6d6c4;--terre:#b5562f;--olive:#6b7a3a;--sable:#f3e6d8;--r:10px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--encre);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+a{color:inherit}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:400;line-height:1.1}
+h1{font-size:clamp(36px,5vw,56px);margin:10px 0 16px}h1 em{color:var(--terre)}
+h2{font-size:clamp(26px,3vw,34px);margin:40px 0 6px}h3{font-size:22px;margin:0 0 6px}
+.wrap{max-width:1180px;margin:auto;padding:48px 32px}.etroit{max-width:860px}
+.kicker{text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--olive);font-weight:600;margin:0}
+.lede{font-family:Newsreader,serif;font-style:italic;font-size:21px;color:var(--gris);margin:0 0 26px}
+.sub{color:var(--gris);margin:0 0 22px}.centre{text-align:center;margin-top:28px}
+.bandeau{background:var(--terre);color:#fff;text-align:center;font-size:14px;padding:8px 16px}
+.entete{display:flex;align-items:center;gap:24px;padding:10px 32px;background:var(--feuille);border-bottom:1px solid var(--trait);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.logo img{height:72px;display:block;mix-blend-mode:multiply}
+nav{display:flex;gap:22px;flex:1}nav a{text-decoration:none;font-size:15px}nav a[aria-current]{color:var(--terre);font-weight:600}
+.actions{display:flex;gap:10px}.burger{display:none;font-size:26px;cursor:pointer}
+.btn{display:inline-block;padding:11px 20px;border-radius:var(--r);font-weight:600;text-decoration:none;font-size:15px;border:1.5px solid var(--terre)}
+.plein{background:var(--terre);color:#fff}.contour{color:var(--terre)}.clair{background:var(--feuille);color:var(--encre);border-color:var(--feuille)}
+.contour-clair{color:#fff;border-color:#fff}.grand{font-size:18px;padding:15px 30px}
+.lien{color:var(--terre);font-weight:600;text-decoration:none}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.photo{aspect-ratio:1;border-radius:var(--r);background:repeating-linear-gradient(45deg,var(--sable),var(--sable) 12px,var(--papier) 12px,var(--papier) 24px);display:grid;place-items:center;color:var(--gris);font-size:13px}
+.photo.large{aspect-ratio:4/3;border:1px solid var(--trait)}
+.chiffres{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;padding:24px 32px;background:var(--feuille);border-block:1px solid var(--trait);text-align:center}
+.chiffres b{display:block;font:400 38px Newsreader,serif;color:var(--terre)}.chiffres span{font-size:13px;color:var(--gris)}
+.cartes{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.card{background:var(--feuille);border:1px solid var(--trait);border-radius:var(--r);overflow:hidden}.card .photo{border-radius:0}
+.card .t{padding:14px}.card p{margin:2px 0}.meta{font-size:13px;color:var(--gris)}.card .lien{display:inline-block;margin-top:8px;font-size:14px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.panel{padding:30px;border-radius:var(--r);background:var(--feuille);border:1px solid var(--trait)}.panel h2{margin-top:0}
+.vert{background:var(--olive);color:#fff;border:0}.sable{background:var(--sable)}
+.etapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;counter-reset:e;margin-top:10px}
+.etapes div{border-top:2px solid var(--terre);padding-top:12px}.etapes b{font:400 22px Newsreader,serif}
+.etapes b::before{counter-increment:e;content:"0" counter(e) "  ";color:var(--olive);font-size:15px}
+.galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+.encart{margin-top:32px;padding:18px 22px;border-left:4px solid var(--terre);background:var(--sable);border-radius:var(--r)}
+.pied{background:var(--encre);color:var(--papier);display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px;padding:40px 32px;font-size:14px}
+.pied a{display:block;text-decoration:none;opacity:.85;margin-top:4px}.logo-pied{height:70px;filter:invert(1);mix-blend-mode:screen}
+.maquette{position:fixed;right:12px;bottom:12px;background:#000;color:#fff;padding:5px 12px;border-radius:99px;font-size:12px}
+@media (max-width:860px){
+ .entete{flex-wrap:wrap;padding:8px 16px;gap:10px}.logo img{height:52px}.burger{display:block;margin-left:auto}
+ nav{display:none;flex-basis:100%;flex-direction:column;gap:12px;padding:8px 0}#menu:checked~nav{display:flex}
+ .actions{flex-basis:100%}.actions .btn{flex:1;text-align:center}
+ .wrap{padding:32px 16px}.hero,.duo,.trio,.pied{grid-template-columns:1fr}.galerie{grid-template-columns:1fr 1fr}
+ .chiffres{gap:24px;padding:20px 16px}}
+.hero-img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 40%;border-radius:var(--r);border:1px solid var(--trait)}
+.logo img{height:88px}
+@media (max-width:860px){.logo img{height:64px}}
+/* Interactions */
+.cliquable{cursor:pointer;transition:transform .18s,box-shadow .18s}
+.cliquable:hover,.cliquable:focus-visible{transform:translateY(-4px);box-shadow:0 10px 24px rgba(91,50,20,.12);outline:none}
+.btn{transition:filter .15s,transform .15s}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.filtres,.montants{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 10px}
+.filtre,.montant{font:600 14px "IBM Plex Sans",sans-serif;padding:8px 16px;border-radius:99px;border:1.5px solid var(--terre);background:transparent;color:var(--terre);cursor:pointer}
+.filtre.actif,.montant.actif{background:var(--terre);color:#fff}
+.montant{font-size:17px;padding:10px 22px}
+.compte{color:var(--gris);font-size:14px;margin:0 0 16px}
+.don-choix{margin-top:8px}.don-choix h2{margin-top:0}.impact{font-family:Newsreader,serif;font-size:20px;font-style:italic;min-height:1.6em}.petit{font-size:12px;margin-top:10px}
+dialog{border:0;border-radius:14px;padding:0;max-width:min(760px,calc(100vw - 32px));width:100%;background:var(--feuille);color:var(--encre)}
+dialog::backdrop{background:rgba(27,27,25,.55)}
+.fiche{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:28px}.fiche h2{margin:4px 0 10px}
+.fermer{position:absolute;right:10px;top:6px;border:0;background:none;font-size:30px;cursor:pointer;color:var(--gris)}
+.apparait{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.apparait.vu{opacity:1;transform:none}
+@media (max-width:860px){.fiche{grid-template-columns:1fr;padding:22px 18px}}
+.fiche .photo{aspect-ratio:4/3;max-height:42vh;width:100%}dialog{max-height:calc(100dvh - 32px);overflow:auto}
+
+/* ===== DA chaleureuses (choix par ?da=pinceau | rond | carnet) ===== */
+:root{--papier:#fbf1e3;--feuille:#fff8ee;--sable:#f6e2c8;--trait:#ecd3b4;--terre:#c2562b;--olive:#7a4a2b;--ocre:#e3a33a;
+ --titre:"Amatic SC",cursive;--texte:"Nunito",system-ui,sans-serif;--tt:700;--th1:clamp(52px,7vw,84px);--th2:clamp(38px,4.5vw,52px);--th3:30px}
+html[data-da="rond"]{--titre:"Fredoka",system-ui,sans-serif;--tt:600;--th1:clamp(38px,5vw,60px);--th2:clamp(28px,3.4vw,38px);--th3:22px;--r:20px;--papier:#fdf3e7;--olive:#8a5a3b}
+html[data-da="carnet"]{--titre:"Fraunces",Georgia,serif;--tt:600;--th1:clamp(38px,5vw,62px);--th2:clamp(28px,3.4vw,40px);--th3:23px;--r:6px;--papier:#f8eedf;--olive:#6e4a33}
+body{font-family:var(--texte)}
+h1,h2,h3,.chiffres b,.etapes b,.impact{font-family:var(--titre);font-weight:var(--tt)}
+h1{font-size:var(--th1);line-height:1}h2{font-size:var(--th2)}h3{font-size:var(--th3)}
+html[data-da="carnet"] h1,html[data-da="carnet"] h2{font-variation-settings:"SOFT" 100}
+.lede{font-family:var(--texte);font-style:normal;font-size:19px}
+html[data-da="carnet"] .lede,html[data-da="carnet"] .mot{font-family:"Caveat",cursive;font-size:24px;color:var(--olive)}
+.kicker{color:var(--olive)}.vert{background:var(--olive)}.bandeau{background:var(--olive)}
+.chiffres b{font-size:44px}html[data-da="pinceau"] .chiffres b{font-size:54px}
+.etapes b::before{color:var(--ocre)}.mot{font-style:italic}
+.panel.insta{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:28px;background:var(--sable)}
+.panel.insta h3{margin:0}
+.hero-img{transform:rotate(1.5deg);box-shadow:0 14px 30px rgba(120,60,20,.18)}
+html[data-da="pinceau"] .card{transform:rotate(-.6deg)}html[data-da="pinceau"] .card:nth-child(even){transform:rotate(.7deg)}
+html[data-da="carnet"] .card{box-shadow:0 2px 0 var(--trait)}
+.tel{font:600 24px var(--texte);color:var(--terre);text-decoration:none}
+.pile{display:grid;gap:20px}.pile .vert{padding:40px}.pile .vert h2{font-size:calc(var(--th2) * 1.15)}
+.pile .panel{text-align:center}.pile .panel p{max-width:560px;margin-inline:auto}.pile .ctas{justify-content:center}.pile .btn{font-size:19px;padding:16px 36px;margin-top:8px}
+
+.appel{padding:34px 28px;text-align:center}.appel h2{font-size:44px;margin:6px 0}.appel .ctas{justify-content:center;margin-top:14px}
+
+.ticket{display:grid;gap:14px;margin-top:16px}.ticket label{display:grid;gap:6px;font-weight:600;font-size:14px}
+.ticket input,.ticket select,.ticket textarea{font:16px var(--texte);padding:10px 12px;border:1px solid var(--trait);border-radius:var(--r);background:var(--feuille);color:var(--encre)}
+.ticket .btn{justify-self:start}
+
+.piege{position:absolute;left:-9999px}.retour{font-weight:600;color:var(--olive);margin:0}
+
+.panel.vert .kicker{color:var(--ocre)}.panel h2{margin-top:4px}html{scroll-behavior:smooth}#aide{scroll-margin-top:110px}
+
+.photo-vraie{width:100%;aspect-ratio:1;object-fit:cover;object-position:center 25%;display:block}.fiche .photo-vraie{border-radius:var(--r);aspect-ratio:4/5;max-height:60vh}
+.photo-vraie[src*="indy"]{object-position:center 68%}
+
+.photo-vraie[src*="portee"]{object-position:42% 50%}
+
+.photo-vraie[src*="tigrete"]{object-position:center 55%}
+
+.mention-boutique{display:block;margin-top:.9rem;opacity:.8;font-size:.82rem}
+
+.membre{text-align:center;padding-top:1.4rem}.initiale{width:84px;height:84px;margin:0 auto;border-radius:50%;background:var(--ocre,#e3a33a);color:#fff;display:grid;place-items:center;font-family:Fraunces,serif;font-size:2.4rem}
+#toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,150%);background:#6e4a33;color:#fff;padding:.8rem 1.3rem;border-radius:999px;transition:transform .3s;z-index:99}#toast.vu{transform:translate(-50%,0)}

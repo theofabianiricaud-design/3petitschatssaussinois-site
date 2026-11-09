@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://3petitschatssaussinois.fr/sitemap.xml
