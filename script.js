@@ -105,6 +105,8 @@ ticket?.addEventListener("submit", async (e) => {
     const j = await r.json();
     if (!j.success) throw new Error(j.message);
     ticket.reset(); retour.textContent = `Merci ! Votre ticket ${num} est bien envoyé. Nous vous répondons par e-mail.`;
+    // suivi sans cookie : compte l'envoi du formulaire (aucune donnée personnelle transmise)
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: "formulaire-envoye", title: sujet, event: true });
   } catch { retour.textContent = `L'envoi n'a pas marché. Écrivez-nous à ${LIENS.equipe} en indiquant ${num}.`; }
   finally { btn.disabled = false; }
 });
