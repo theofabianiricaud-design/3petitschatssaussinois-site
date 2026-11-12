@@ -110,3 +110,13 @@ html[data-da="carnet"] .card{box-shadow:0 2px 0 var(--trait)}
 
 .membre{text-align:center;padding-top:1.4rem}.initiale{width:84px;height:84px;margin:0 auto;border-radius:50%;background:var(--ocre,#e3a33a);color:#fff;display:grid;place-items:center;font-family:Fraunces,serif;font-size:2.4rem}
 #toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,150%);background:#6e4a33;color:#fff;padding:.8rem 1.3rem;border-radius:999px;transition:transform .3s;z-index:99}#toast.vu{transform:translate(-50%,0)}
+
+/* --- corrections de l'audit du 12/11 (contrastes AA, cibles tactiles, formulaire mobile) --- */
+:root{--terre:#a8461f}
+.vert .mention-boutique,.vert .sub{color:#f8eedf;opacity:1}
+html[data-da] .vert .kicker,.vert .kicker{color:#f6dcb2}
+.pied a{padding-block:6px;margin-top:0}
+.bandeau a{display:inline-block;padding-block:6px;color:inherit}
+.lien{display:inline-block;padding-block:6px}
+.ticket,.ticket label{min-width:0}
+.ticket input,.ticket select,.ticket textarea{width:100%;max-width:100%}
